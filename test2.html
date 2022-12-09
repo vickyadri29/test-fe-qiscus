@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Test 2 Answer</title>
+    <style>
+      html,
+      body {
+        font-family: "Inter", sans-serif;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        color: #555555;
+        background: #fafafa;
+      }
+      .box {
+        width: 600px;
+        height: 100px;
+        background: #ebebeb;
+        display: block;
+        margin: 50px;
+      }
+      .box2 {
+        width: 100px;
+        height: 600px;
+        background: #ebebeb;
+        display: block;
+        margin: 5px;
+      }
+      .box_inside,
+      .box2_inside,
+      .box_inside:hover,
+      .box2_inside:hover {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background-image: url(https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/DeNI4HaQvt/center.png);
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+
+      /* Using wildcard and root to set variables image url arrow right, left, up and down */
+      :root {
+        --right: url(https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/DFrQ7vCgy2/right.png);
+        --left: url(https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/4RQPxvmQRX/left.png);
+        --up: url(https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/YdH9_StfiW/up.png);
+        --down: url(https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/rR-t7stGWr/down.png);
+      }
+
+      .box {
+        ---prev: var(--right);
+        ---next: var(--left);
+      }
+
+      .box2 {
+        ---prev: var(--down);
+        ---next: var(--up);
+      }
+
+      [class*="box"]:hover > [class$="_inside"]:not(:hover) {
+        background-image: var(---prev);
+      }
+
+      [class*="box"]:hover ~ [class$="_inside"]:not(:hover) {
+        background-image: var(---next);
+      }
+
+      /*
+            assets:
+            RIGHT ARROW: https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/DFrQ7vCgy2/right.png
+            LEFT ARROW: https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/4RQPxvmQRX/left.png
+            DOWN ARROW: https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/rR-t7stGWr/down.png
+            UP ARROW: https://d1edrlpyc25xu0.cloudfront.net/hat-ppxmocchbbcbhopzk/image/upload/w_320,h_320,c_limit/YdH9_StfiW/up.png
+            */
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box_inside"></div>
+      <div class="box_inside"></div>
+      <div class="box_inside"></div>
+      <div class="box_inside"></div>
+      <div class="box_inside"></div>
+      <div class="box_inside"></div>
+    </div>
+    <div class="box2">
+      <div class="box2_inside"></div>
+      <div class="box2_inside"></div>
+      <div class="box2_inside"></div>
+      <div class="box2_inside"></div>
+      <div class="box2_inside"></div>
+      <div class="box2_inside"></div>
+    </div>
+  </body>
+</html>

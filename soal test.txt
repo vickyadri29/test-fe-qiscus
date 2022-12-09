@@ -1,0 +1,2 @@
+Pada file test2.html telah diberikan sebuah file html lengkap dengan objek2 didalamnya, tugas anda adalah manambahkan script CSS agar tampilan pada file html tersebut sesuai dengan video contoh yang diberikan.
+Perlu diingat bahwa tidak diijinkan menambahkan script, atau mengubah tag html yang sudah ada (termasuk menambahkan class dan atau id pada elemen html.
